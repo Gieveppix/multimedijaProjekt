@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted, defineAsyncComponent } from "vue";
 import VideoPlayer from "../components/VideoPlayer.vue";
 
 const rules = ref([
@@ -36,22 +36,18 @@ const stjepanAudio = ref(null);
 
 onMounted(() => {
   stjepanAudio.value = new Audio(
-    `${import.meta.env.BASE_URL}src/assets/audio-proba.mp3`
+    import.meta.env.BASE_URL + "src/assets/audio-proba.mp3"
   );
 });
 
-const playStjepanAudio = () => {
-  stjepanAudio.value.play();
-};
-
 const wrVideoUrl = computed(
-  () => `${import.meta.env.BASE_URL}src/assets/wr.mp4`
+  () => import.meta.env.BASE_URL + "src/assets/wr.mp4"
 );
 const video1Url = computed(
-  () => `${import.meta.env.BASE_URL}src/assets/video1.mp4`
+  () => import.meta.env.BASE_URL + "src/assets/video1.mp4"
 );
 const video3Url = computed(
-  () => `${import.meta.env.BASE_URL}src/assets/video3.mp4`
+  () => import.meta.env.BASE_URL + "src/assets/video3.mp4"
 );
 </script>
 
