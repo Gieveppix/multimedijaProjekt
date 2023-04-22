@@ -35,12 +35,24 @@ const openDialog = (image) => {
 const stjepanAudio = ref(null);
 
 onMounted(() => {
-  stjepanAudio.value = new Audio("/src/assets/audio-proba.mp3");
+  stjepanAudio.value = new Audio(
+    `${import.meta.env.BASE_URL}src/assets/audio-proba.mp3`
+  );
 });
 
 const playStjepanAudio = () => {
   stjepanAudio.value.play();
 };
+
+const wrVideoUrl = computed(
+  () => `${import.meta.env.BASE_URL}src/assets/wr.mp4`
+);
+const video1Url = computed(
+  () => `${import.meta.env.BASE_URL}src/assets/video1.mp4`
+);
+const video3Url = computed(
+  () => `${import.meta.env.BASE_URL}src/assets/video3.mp4`
+);
 </script>
 
 <template>
@@ -61,17 +73,17 @@ const playStjepanAudio = () => {
     <div class="divider"></div>
     <div class="flex flex-row justify-between">
       <div>
-        <VideoPlayer videoUrl="/src/assets/wr.mp4" />
+        <VideoPlayer :videoUrl="wrVideoUrl" />
         <div style="margin: 24px 0 0 0" class="text-center">
           David Popovici WR
         </div>
       </div>
       <div>
-        <VideoPlayer videoUrl="/src/assets/video1.mp4" />
+        <VideoPlayer :videoUrl="video1Url" />
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 1</div>
       </div>
       <div>
-        <VideoPlayer videoUrl="/src/assets/video3.mp4" />
+        <VideoPlayer :videoUrl="video3Url" />
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 2</div>
       </div>
     </div>
