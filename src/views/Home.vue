@@ -16,6 +16,9 @@ const rules = ref([
 ]);
 
 const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg)");
+const audioModules = import.meta.globEager("../assets/*.mp3");
+const videoModules = import.meta.globEager("../assets/*.mp4");
+
 const images = ref([]);
 
 Object.keys(imageModules).forEach((key) => {
@@ -34,21 +37,36 @@ const openDialog = (image) => {
 
 const stjepanAudio = ref(null);
 
-onMounted(() => {
-  stjepanAudio.value = new Audio(
-    import.meta.env.BASE_URL + "src/assets/audio-proba.mp3"
-  );
+let stjepanAudioSrc;
+Object.keys(audioModules).forEach((key) => {
+  if (key.includes("audio-proba.mp3")) {
+    stjepanAudioSrc = audioModules[key].default;
+  }
 });
 
-const wrVideoUrl = computed(
-  () => import.meta.env.BASE_URL + "src/assets/wr.mp4"
-);
-const video1Url = computed(
-  () => import.meta.env.BASE_URL + "src/assets/video1.mp4"
-);
-const video3Url = computed(
-  () => import.meta.env.BASE_URL + "src/assets/video3.mp4"
-);
+onMounted(() => {
+  stjepanAudio.value = new Audio(stjepanAudioSrc);
+});
+
+const playStjepanAudio = () => {
+  stjepanAudio.value.play();
+};
+
+let wrVideoSrc, video1Src, video3Src;
+
+Object.keys(videoModules).forEach((key) => {
+  if (key.includes("wr.mp4")) {
+    wrVideoSrc = videoModules[key].default;
+  } else if (key.includes("video1.mp4")) {
+    video1Src = videoModules[key].default;
+  } else if (key.includes("video3.mp4")) {
+    video3Src = videoModules[key].default;
+  }
+});
+
+const wrVideoUrl = ref(wrVideoSrc);
+const video1Url = ref(video1Src);
+const video3Url = ref(video3Src);
 </script>
 
 <template>
