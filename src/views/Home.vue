@@ -15,7 +15,7 @@ const rules = ref([
   "Officials: Swimming competitions are overseen by a team of officials, including referees, starters, stroke judges, turn judges, and timers. These officials ensure that swimmers adhere to the rules, maintain a fair competition, and record accurate times. They also have the authority to disqualify swimmers for rule violations or other issues that may arise during the competition.",
 ]);
 
-const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg)");
+const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg|png)");
 const audioModules = import.meta.globEager("../assets/*.mp3");
 const videoModules = import.meta.globEager("../assets/*.mp4");
 
@@ -97,6 +97,19 @@ const video3Url = ref(video3Src);
       </div>
     </div>
     <div class="divider"></div>
+
+    <div class="flex flex-row justify-between">
+      <div>
+        <img src="../assets/gif-swimming.gif" alt="" width="320" height="213">
+      </div>
+      <div>
+        <img src="../assets/guy-swimmer.tif" alt="" width="320" height="213">
+      </div>
+      <div>
+        <img src="../assets/guy-swimmer-2.bmp" alt="" width="320" height="213">
+      </div>
+    </div>
+
     <el-card class="flex flex-col divider">
       <div class="center-content">
         <el-tag size="large" rounded class="hover-pointer" @click="showRules = !showRules">Rules</el-tag>
@@ -116,14 +129,14 @@ const video3Url = ref(video3Src);
         </template>
         <el-descriptions title="Customized style list" :column="1" border>
           <el-descriptions-item label="Place of birth" label-align="right" align="center" label-class-name="my-label"
-            class-name="my-content" width="150px">Osijek</el-descriptions-item>
+            class-name="my-content" width="150px">Vinkovci</el-descriptions-item>
           <el-descriptions-item label="Place of residence" label-align="right"
             align="center">Osijek</el-descriptions-item>
           <el-descriptions-item label="Elementary school" label-align="right" align="center"><el-link
-              href="http://os-fkrezme-os.skole.hr/">OŠ Franjo Krežma</el-link></el-descriptions-item>
+              href="http://os-stari-jankovci.skole.hr/">OŠ Stari Jankovci</el-link></el-descriptions-item>
           <el-descriptions-item label="High school" label-align="right" align="center"><el-link
-              href="http://gimnazija-treca-os.skole.hr/">
-              III. gimnazija Osijek</el-link>
+              href="http://ss-tehnicka-ntesla-vu.skole.hr/">
+              TSNT Vukovar</el-link>
           </el-descriptions-item>
           <el-descriptions-item label="College" label-align="right" align="center"><el-link
               href="https://www.ferit.unios.hr/">FERIT Osijek</el-link></el-descriptions-item>
