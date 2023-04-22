@@ -61,7 +61,7 @@ const playStjepanAudio = () => {
     <div class="divider"></div>
     <div class="flex flex-row justify-between">
       <div>
-        <VideoPlayer videoUrl="/src/assets/wr-compresses.mp4" />
+        <VideoPlayer videoUrl="/src/assets/wr.mp4" />
         <div style="margin: 24px 0 0 0" class="text-center">
           David Popovici WR
         </div>
