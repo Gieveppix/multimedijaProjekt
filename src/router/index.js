@@ -12,7 +12,7 @@ const routes = [
     path: "/stjepan",
     name: "Stjepan",
     component: Stjepan
-  },
+  }
 ];
 
 const router = createRouter({

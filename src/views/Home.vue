@@ -194,7 +194,7 @@ const video3Url = ref(video3Src);
         </div>
       </el-popover>
       <div class="divider"></div>
-      <router-link to="/marko">
+      <router-link to="/">
         <div class="text-center">Markov drugi izbor</div>
       </router-link>
       <div class="divider"></div>
