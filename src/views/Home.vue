@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, defineAsyncComponent } from "vue";
+import { ref, onMounted } from "vue";
 import VideoPlayer from "../components/VideoPlayer.vue";
 
 const rules = ref([
@@ -72,9 +72,9 @@ const video3Url = ref(video3Src);
 <template>
   <div class="main_container flex flex-col">
     <div class="flex divider">
-      <h1>Swimming</h1>
+      <h1 class="white">Swimming</h1>
     </div>
-    <el-carousel :interval="4000" type="card" height="513px">
+    <el-carousel :interval="2500" type="card" height="513px">
       <el-carousel-item v-for="(image, index) in images" :key="index">
         <img
           @click="() => openDialog(image)"
@@ -101,8 +101,12 @@ const video3Url = ref(video3Src);
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 2</div>
       </div>
     </div>
-    <div class="divider"></div>
-    <el-card class="flex flex-col divider">
+    <div class="rule-divider"></div>
+    <el-card
+      shadow="hover"
+      style="background-color: var(--primary-color-400)"
+      class="flex flex-col divider"
+    >
       <div class="center-content">
         <el-tag
           size="large"
@@ -117,14 +121,14 @@ const video3Url = ref(video3Src);
       </div>
     </el-card>
   </div>
-  <div class="divider"></div>
+  <div class="rule-divider"></div>
   <div class="flex flex-row mx-auto justify-between w-75">
     <div class="flex flex-col">
-      <el-popover placement="right" :width="400" trigger="click">
+      <el-popover placement="right" :width="500" trigger="click">
         <template #reference>
           <img width="320" height="213" src="../assets/stjepan.jpg" />
         </template>
-        <el-descriptions title="Customized style list" :column="1" border>
+        <el-descriptions title="Basic info" :column="1" border>
           <el-descriptions-item
             label="Place of birth"
             label-align="right"
@@ -174,11 +178,11 @@ const video3Url = ref(video3Src);
       <h2 class="text-center">Stjepan Milardić</h2>
     </div>
     <div class="flex flex-col">
-      <el-popover placement="right" :width="400" trigger="click">
+      <el-popover placement="right" :width="500" trigger="click">
         <template #reference>
           <img width="320" height="213" src="../assets/marko.jpg" />
         </template>
-        <el-descriptions title="Customized style list" :column="1" border>
+        <el-descriptions title="Basic Info" :column="1" border>
           <el-descriptions-item
             label="Place of birth"
             label-align="right"
@@ -228,6 +232,7 @@ const video3Url = ref(video3Src);
       <h2 class="text-center">Marko Milanović</h2>
     </div>
   </div>
+  <div class="divider"></div>
   <el-dialog
     :model-value="showDialog"
     @update:model-value="showDialog = $event"
@@ -252,9 +257,13 @@ const video3Url = ref(video3Src);
   height: 100%;
 }
 .divider {
-  margin: 20px 0 40px 0;
+  margin: 60px 0 100px 0;
 }
 .rule-divider {
   margin: 20px 0 20px 0;
+}
+
+.el-card {
+  --el-card-border-color: none;
 }
 </style>

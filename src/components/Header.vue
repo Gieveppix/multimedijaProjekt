@@ -9,7 +9,7 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
     <div class="wrapper">
       <div class="flex justify-between align-center">
         <el-space size="small" class="pointer">
-          <span class="text-white ml-2">MULTIMEDIJA</span>
+          <span class="white ml-2">Multimedia Technique</span>
         </el-space>
         <div>
           <el-dropdown trigger="click" class="pointer avatar-padding">
@@ -37,7 +37,7 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
 
 <style scoped>
 .header {
-  background-color: var(--primary-color-900);
+  background-color: var(--primary-color-700);
   height: unset;
   padding: 1rem;
 }
