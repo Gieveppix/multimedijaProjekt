@@ -21,16 +21,6 @@ const videoModules = import.meta.globEager("../assets/*.mp4");
 
 const images = ref([]);
 
-const showStjepanDialog = ref(null);
-const openStjepanImgDialog = () => {
-  showStjepanDialog.value = true;
-};
-
-const showMarkoDialog = ref(null);
-const openMarkoImgDialog = () => {
-  showMarkoDialog.value = true;
-};
-
 Object.keys(imageModules).forEach((key) => {
   images.value.push(imageModules[key].default);
 });
@@ -111,15 +101,12 @@ const video3Url = ref(video3Src);
     <div class="flex flex-row justify-between">
       <div>
         <img src="../assets/gif-swimming.gif" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .gif</div>
       </div>
       <div>
         <img src="../assets/guy-swimmer.tif" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .tif</div>
       </div>
       <div>
         <img src="../assets/guy-swimmer-2.bmp" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .bmp</div>
       </div>
     </div>
 
@@ -135,11 +122,10 @@ const video3Url = ref(video3Src);
   <div class="divider"></div>
   <div class="flex flex-row mx-auto justify-between w-75">
     <div class="flex flex-col">
-      <img @click="() => openStjepanImgDialog()" width="320" height="213" src="../assets/stjepan-compressed.jpg"
-        class="hover-pointer" />
+      <img width="320" height="213" src="../assets/stjepan.jpg" />
       <el-popover placement="right" :width="400" trigger="click">
         <template #reference>
-          <h2 class="text-center hover-pointer hover-highlight-underline">Stjepan Milardić</h2>
+          <h2 class="text-center">Stjepan Milardić</h2>
         </template>
         <el-descriptions title="Customized style list" :column="1" border>
           <el-descriptions-item label="Place of birth" label-align="right" align="center" label-class-name="my-label"
@@ -168,11 +154,10 @@ const video3Url = ref(video3Src);
     </div>
 
     <div class="flex flex-col">
-      <img @click="() => openMarkoImgDialog()" width="320" height="213" src="../assets/marko-compressed.jpg"
-        class="hover-pointer" />
+      <img width="320" height="213" src="../assets/marko.jpg" />
       <el-popover placement="right" :width="400" trigger="click">
         <template #reference>
-          <h2 class="text-center hover-pointer hover-highlight-underline">Marko Milanović</h2>
+          <h2 class="text-center">Marko Milanović</h2>
         </template>
         <el-descriptions title="Customized style list" :column="1" border>
           <el-descriptions-item label="Place of birth" label-align="right" align="center" label-class-name="my-label"
@@ -202,14 +187,6 @@ const video3Url = ref(video3Src);
   </div>
   <el-dialog :model-value="showDialog" @update:model-value="showDialog = $event" width="80%" center>
     <img v-if="selectedImage" :src="selectedImage" style="width: 100%" alt="Selected image" />
-  </el-dialog>
-  <el-dialog :model-value="showStjepanDialog" @update:model-value="showStjepanDialog = $event" width="80%" center>
-    <p>Stjepan Milardic</p>
-    <img src="../assets/stjepan.jpg" alt="">
-  </el-dialog>
-  <el-dialog :model-value="showMarkoDialog" @update:model-value="showMarkoDialog = $event" width="80%" center>
-    <p>Marko Milanovic</p>
-    <img src="../assets/marko.jpg" alt="">
   </el-dialog>
 </template>
 
