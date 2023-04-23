@@ -1,15 +1,6 @@
 <template>
-  <div
-    class="video-player"
-    :class="{ small: !isExpanded, expanded: isExpanded }"
-    @click="toggleSize"
-    ref="containerRef"
-  >
-    <video
-      ref="videoRef"
-      @ended="videoEnded"
-      @loadedmetadata="videoMetadataLoaded"
-    >
+  <div class="video-player" :class="{ small: !isExpanded, expanded: isExpanded }" @click="toggleSize" ref="containerRef">
+    <video ref="videoRef" @ended="videoEnded" @loadedmetadata="videoMetadataLoaded">
       <source :src="videoUrl" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -87,9 +78,11 @@ onUpdated(updateTransformOrigin);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   z-index: 1000;
+  border: 5px solid orangered;
+  box-shadow: 10px 10px 10px black;
 }
 
 .video-player video {
@@ -106,7 +99,7 @@ onUpdated(updateTransformOrigin);
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
   z-index: 1;
 }
