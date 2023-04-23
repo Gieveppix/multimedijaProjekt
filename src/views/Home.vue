@@ -15,7 +15,6 @@ const rules = ref([
   "Officials: Swimming competitions are overseen by a team of officials, including referees, starters, stroke judges, turn judges, and timers. These officials ensure that swimmers adhere to the rules, maintain a fair competition, and record accurate times. They also have the authority to disqualify swimmers for rule violations or other issues that may arise during the competition.",
 ]);
 
-const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg|png)");
 const audioModules = import.meta.globEager("../assets/*.mp3");
 const videoModules = import.meta.globEager("../assets/*.mp4");
 
@@ -31,6 +30,7 @@ const openMarkoImgDialog = () => {
   showMarkoDialog.value = true;
 };
 
+const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg|png|gif|tif|bmp)");
 Object.keys(imageModules).forEach((key) => {
   images.value.push(imageModules[key].default);
 });
@@ -107,21 +107,6 @@ const video3Url = ref(video3Src);
       </div>
     </div>
     <div class="divider"></div>
-
-    <div class="flex flex-row justify-between">
-      <div>
-        <img src="../assets/gif-swimming.gif" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .gif</div>
-      </div>
-      <div>
-        <img src="../assets/guy-swimmer.tif" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .tif</div>
-      </div>
-      <div>
-        <img src="../assets/guy-swimmer-2.bmp" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .bmp</div>
-      </div>
-    </div>
 
     <el-card class="flex flex-col divider">
       <div class="center-content hover-pointer" @click="showRules = !showRules">
