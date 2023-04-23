@@ -11,23 +11,23 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
         <el-space size="small" class="pointer">
           <span class="text-white ml-2">MULTIMEDIJA</span>
         </el-space>
-        <div>
-          <el-dropdown trigger="click" class="pointer avatar-padding">
-            <el-avatar shape="square" :size="40">
-              <el-avatar shape="square" :size="100" :fit="fit" :src="url" />
-            </el-avatar>
-            <!-- <template #dropdown>
+      <div>
+        <el-dropdown trigger="click" class="pointer avatar-padding">
+          <el-avatar shape="square" :size="40">
+            <el-avatar shape="square" :size="100" :fit="fit" :src="url" />
+          </el-avatar>
+          <!-- <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item>Profile</el-dropdown-item>
                 <el-dropdown-item>Management</el-dropdown-item>
                 <el-dropdown-item> </el-dropdown-item>
                 <el-dropdown-item divided
-                  ><el-space size="small"
-                    ><el-icon><SwitchButton /></el-icon></el-space
-                  >Logout</el-dropdown-item
-                >
-              </el-dropdown-menu>
-            </template> -->
+                    ><el-space size="small"
+                      ><el-icon><SwitchButton /></el-icon></el-space
+                    >Logout</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </template> -->
           </el-dropdown>
         </div>
       </div>
@@ -41,13 +41,16 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
   height: unset;
   padding: 1rem;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .avatar-padding {
   padding: 2px;
   border-radius: 10%;
 }
+
 .avatar-padding:hover {
   background-color: var(--primary-color-300);
 }
@@ -60,5 +63,4 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
 .badge-position-fix {
   position: relative;
   top: 0.25rem;
-}
-</style>
+}</style>

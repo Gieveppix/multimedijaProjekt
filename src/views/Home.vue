@@ -91,17 +91,17 @@ const video3Url = ref(video3Src);
     </el-carousel>
     <div class="divider"></div>
     <div class="flex flex-row justify-between">
-      <div>
+      <div class="hover-pointer">
         <VideoPlayer :videoUrl="wrVideoUrl" />
         <div style="margin: 24px 0 0 0" class="text-center">
           David Popovici WR
         </div>
       </div>
-      <div>
+      <div class="hover-pointer">
         <VideoPlayer :videoUrl="video1Url" />
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 1</div>
       </div>
-      <div>
+      <div class="hover-pointer">
         <VideoPlayer :videoUrl="video3Url" />
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 2</div>
       </div>
@@ -124,8 +124,8 @@ const video3Url = ref(video3Src);
     </div>
 
     <el-card class="flex flex-col divider">
-      <div class="center-content">
-        <el-tag size="large" rounded class="hover-pointer" @click="showRules = !showRules">Rules</el-tag>
+      <div class="center-content hover-pointer" @click="showRules = !showRules">
+        <el-tag size="large" rounded class="hover-pointer">Rules</el-tag>
       </div>
       <div v-if="showRules" v-for="rule in rules">
         <p class="rule-divider">{{ rule }}</p>
@@ -160,6 +160,11 @@ const video3Url = ref(video3Src);
             Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
+      <div class="divider"></div>
+      <router-link to="/stjepan">
+        <div class="text-center">Stjepanov drugi izbor</div>
+      </router-link>
+      <div class="divider"></div>
     </div>
 
     <div class="flex flex-col">
@@ -188,6 +193,11 @@ const video3Url = ref(video3Src);
             Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
+      <div class="divider"></div>
+      <router-link to="/marko">
+        <div class="text-center">Markov drugi izbor</div>
+      </router-link>
+      <div class="divider"></div>
     </div>
   </div>
   <el-dialog :model-value="showDialog" @update:model-value="showDialog = $event" width="80%" center>
