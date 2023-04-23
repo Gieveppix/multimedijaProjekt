@@ -21,6 +21,9 @@
 .hover-pointer:hover {
   cursor: pointer;
 }
+.hover-highlight-underline:hover {
+  text-decoration: underline;
+}
 .text-center {
   text-align: center;
 }
