@@ -114,10 +114,6 @@ const video3Url = ref(video3Src);
         <div style="margin: 24px 0 0 0" class="text-center">Sample .gif</div>
       </div>
       <div>
-        <img src="../assets/guy-swimmer.tif" alt="" width="320" height="213">
-        <div style="margin: 24px 0 0 0" class="text-center">Sample .tif</div>
-      </div>
-      <div>
         <img src="../assets/guy-swimmer-2.bmp" alt="" width="320" height="213">
         <div style="margin: 24px 0 0 0" class="text-center">Sample .bmp</div>
       </div>
