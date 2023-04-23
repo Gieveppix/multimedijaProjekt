@@ -1,6 +1,6 @@
 body {
-  background: var(--color-body-background);
-  color: var(--color-text-1000);
+  background: var(--primary-color-500);
+  color: var(--primary-color-900);
   font-family: var(--primary-font);
   font-size: var(--font-size-1);
   font-style: normal;

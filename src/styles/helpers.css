@@ -36,3 +36,61 @@
 .mx-auto {
   margin: 0 auto;
 }
+.white {
+  color: white;
+}
+
+.el-popper.is-light {
+  background: var(--primary-color-300) !important;
+}
+.el-descriptions__content.el-descriptions__cell.is-bordered-content {
+  background: var(--primary-color-300) !important;
+}
+
+.el-descriptions {
+  --el-descriptions-table-border: 1px solid var(--primary-color-200) !important;
+  --el-descriptions-item-bordered-label-background: var(
+    --primary-color-400
+  ) !important;
+}
+
+.el-descriptions__label.el-descriptions__cell.is-bordered-label {
+  color: var(--primary-color-900) !important;
+}
+.el-descriptions__content.el-descriptions__cell.is-bordered-content {
+  color: var(--primary-color-900) !important;
+}
+.el-tag {
+  --el-tag-bg-color: var(--primary-color-300) !important;
+
+  --el-tag-font-size: 16px !important;
+  --el-tag-border-radius: 12px !important;
+  --el-tag-border-radius-rounded: 9999px !important;
+}
+.el-card {
+  color: var(--primary-color-200) !important;
+}
+.el-dialog {
+  --el-dialog-width: 50%; 
+  --el-dialog-margin-top: 15vh;
+  --el-dialog-bg-color: none !important; 
+  --el-dialog-box-shadow: none !important;
+  --el-dialog-title-font-size: var(--el-font-size-large);
+  --el-dialog-content-font-size: 14px;
+  --el-dialog-font-line-height: var(--el-font-line-height-primary);
+  --el-dialog-padding-primary: 20px;
+  --el-dialog-border-radius: var(--el-border-radius-small);
+}
+.el-dialog__headerbtn {
+  position: absolute;
+  top: 6px;
+  right: 5px !important;
+  padding: 0;
+  width: 54px;
+  height: 54px;
+  background: 0 0;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  font-size: var(--el-message-close-size, 24px) !important;
+}

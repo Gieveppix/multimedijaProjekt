@@ -1,6 +1,6 @@
 <template>
   <el-footer class="footer text-center" height="unset">
-    <p>
+    <p class="">
       Web page was made while attending the Faculty of Electrical Engineering,
       Computer Science and Information Technology Osijek as part of the
       <el-link
@@ -16,6 +16,6 @@
 .footer {
   font-size: 1rem;
   padding-block: 1rem;
-  background-color: var(--primary-color-100);
+  background-color: var(--primary-color-300);
 }
 </style>

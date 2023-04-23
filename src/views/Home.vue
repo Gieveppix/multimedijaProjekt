@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, defineAsyncComponent } from "vue";
+import { ref, onMounted } from "vue";
 import VideoPlayer from "../components/VideoPlayer.vue";
 
 const rules = ref([
@@ -82,9 +82,9 @@ const video3Url = ref(video3Src);
 <template>
   <div class="main_container flex flex-col">
     <div class="flex divider">
-      <h1>Swimming</h1>
+      <h1 class="white">Swimming</h1>
     </div>
-    <el-carousel :interval="4000" type="card" height="513px">
+    <el-carousel :interval="2500" type="card" height="513px">
       <el-carousel-item v-for="(image, index) in images" :key="index">
         <img @click="() => openDialog(image)" width="768" height="513" :src="image" />
       </el-carousel-item>
@@ -106,18 +106,27 @@ const video3Url = ref(video3Src);
         <div style="margin: 24px 0 0 0" class="text-center">Sample video 2</div>
       </div>
     </div>
-    <div class="divider"></div>
-
-    <el-card class="flex flex-col divider">
-      <div class="center-content hover-pointer" @click="showRules = !showRules">
-        <el-tag size="large" rounded class="hover-pointer">Rules</el-tag>
+    <div class="rule-divider"></div>
+    <el-card
+      shadow="hover"
+      style="background-color: var(--primary-color-400)"
+      class="flex flex-col divider"
+    >
+      <div class="center-content">
+        <el-tag
+          size="large"
+          rounded
+          class="hover-pointer"
+          @click="showRules = !showRules"
+          >Rules</el-tag
+        >
       </div>
       <div v-if="showRules" v-for="rule in rules">
         <p class="rule-divider">{{ rule }}</p>
       </div>
     </el-card>
   </div>
-  <div class="divider"></div>
+  <div class="rule-divider"></div>
   <div class="flex flex-row mx-auto justify-between w-75">
     <div class="flex flex-col">
       <img @click="() => openStjepanImgDialog()" width="320" height="213" src="../assets/stjepan-compressed.jpg"
@@ -185,6 +194,7 @@ const video3Url = ref(video3Src);
       <div class="divider"></div>
     </div>
   </div>
+  <div class="divider"></div>
   <el-dialog :model-value="showDialog" @update:model-value="showDialog = $event" width="80%" center>
     <img v-if="selectedImage" :src="selectedImage" style="width: 100%" alt="Selected image" />
   </el-dialog>
@@ -208,10 +218,14 @@ const video3Url = ref(video3Src);
 }
 
 .divider {
-  margin: 20px 0 40px 0;
+  margin: 60px 0 100px 0;
 }
 
 .rule-divider {
   margin: 20px 0 20px 0;
+}
+
+.el-card {
+  --el-card-border-color: none;
 }
 </style>
