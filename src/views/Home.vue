@@ -30,7 +30,9 @@ const openMarkoImgDialog = () => {
   showMarkoDialog.value = true;
 };
 
-const imageModules = import.meta.globEager("../assets/swim*.@(jpg|jpeg|png|gif|tif|bmp)");
+const imageModules = import.meta.globEager(
+  "../assets/swim*.@(jpg|jpeg|png|gif|tif|bmp)"
+);
 Object.keys(imageModules).forEach((key) => {
   images.value.push(imageModules[key].default);
 });
@@ -86,7 +88,12 @@ const video3Url = ref(video3Src);
     </div>
     <el-carousel :interval="2500" type="card" height="513px">
       <el-carousel-item v-for="(image, index) in images" :key="index">
-        <img @click="() => openDialog(image)" width="768" height="513" :src="image" />
+        <img
+          @click="() => openDialog(image)"
+          width="768"
+          height="513"
+          :src="image"
+        />
       </el-carousel-item>
     </el-carousel>
     <div class="divider"></div>
@@ -129,82 +136,162 @@ const video3Url = ref(video3Src);
   <div class="rule-divider"></div>
   <div class="flex flex-row mx-auto justify-between w-75">
     <div class="flex flex-col">
-      <img @click="() => openStjepanImgDialog()" width="320" height="213" src="../assets/stjepan-compressed.jpg"
-        class="hover-pointer" />
-      <el-popover placement="right" :width="400" trigger="click">
+      <img
+        @click="() => openStjepanImgDialog()"
+        width="320"
+        height="213"
+        src="../assets/stjepan-compressed.jpg"
+        class="hover-pointer"
+      />
+      <el-popover placement="right" :width="500" trigger="click">
         <template #reference>
-          <h2 class="text-center hover-pointer hover-highlight-underline">Stjepan Milardić</h2>
+          <h2 class="text-center hover-pointer hover-highlight-underline">
+            Stjepan Milardić
+          </h2>
         </template>
-        <el-descriptions title="Customized style list" :column="1" border>
-          <el-descriptions-item label="Place of birth" label-align="right" align="center" label-class-name="my-label"
-            class-name="my-content" width="150px">Vinkovci</el-descriptions-item>
-          <el-descriptions-item label="Place of residence" label-align="right"
-            align="center">Osijek</el-descriptions-item>
-          <el-descriptions-item label="Elementary school" label-align="right" align="center"><el-link
-              href="http://os-stari-jankovci.skole.hr/">OŠ Stari Jankovci</el-link></el-descriptions-item>
-          <el-descriptions-item label="High school" label-align="right" align="center"><el-link
-              href="http://ss-tehnicka-ntesla-vu.skole.hr/">
-              TSNT Vukovar</el-link>
+        <el-descriptions title="Basic Info" :column="1" border>
+          <el-descriptions-item
+            label="Place of birth"
+            label-align="right"
+            align="center"
+            label-class-name="my-label"
+            class-name="my-content"
+            width="150px"
+            >Vinkovci</el-descriptions-item
+          >
+          <el-descriptions-item
+            label="Place of residence"
+            label-align="right"
+            align="center"
+            >Osijek</el-descriptions-item
+          >
+          <el-descriptions-item
+            label="Elementary school"
+            label-align="right"
+            align="center"
+            ><el-link href="http://os-stari-jankovci.skole.hr/"
+              >OŠ Stari Jankovci</el-link
+            ></el-descriptions-item
+          >
+          <el-descriptions-item
+            label="High school"
+            label-align="right"
+            align="center"
+            ><el-link href="http://ss-tehnicka-ntesla-vu.skole.hr/">
+              TSNT Vukovar</el-link
+            >
           </el-descriptions-item>
-          <el-descriptions-item label="College" label-align="right" align="center"><el-link
-              href="https://www.ferit.unios.hr/">FERIT Osijek</el-link></el-descriptions-item>
+          <el-descriptions-item
+            label="College"
+            label-align="right"
+            align="center"
+            ><el-link href="https://www.ferit.unios.hr/"
+              >FERIT Osijek</el-link
+            ></el-descriptions-item
+          >
         </el-descriptions>
         <div style="margin: 16px 0 0 0" class="w-100 text-center">
           <el-link @click="playStjepanAudio">
-            Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
+            Bavim li se ja ovim sportom, ili ga samo volim?</el-link
+          >
         </div>
       </el-popover>
-      <div class="divider"></div>
-      <router-link to="/stjepan">
-        <div class="text-center">Stjepanov drugi izbor</div>
-      </router-link>
-      <div class="divider"></div>
     </div>
 
     <div class="flex flex-col">
-      <img @click="() => openMarkoImgDialog()" width="320" height="213" src="../assets/marko-compressed.jpg"
-        class="hover-pointer" />
-      <el-popover placement="right" :width="400" trigger="click">
+      <img
+        @click="() => openMarkoImgDialog()"
+        width="320"
+        height="213"
+        src="../assets/marko-compressed.jpg"
+        class="hover-pointer"
+      />
+      <el-popover placement="right" :width="500" trigger="click">
         <template #reference>
-          <h2 class="text-center hover-pointer hover-highlight-underline">Marko Milanović</h2>
+          <h2 class="text-center hover-pointer hover-highlight-underline">
+            Marko Milanović
+          </h2>
         </template>
-        <el-descriptions title="Customized style list" :column="1" border>
-          <el-descriptions-item label="Place of birth" label-align="right" align="center" label-class-name="my-label"
-            class-name="my-content" width="150px">Osijek</el-descriptions-item>
-          <el-descriptions-item label="Place of residence" label-align="right"
-            align="center">Osijek</el-descriptions-item>
-          <el-descriptions-item label="Elementary school" label-align="right" align="center"><el-link
-              href="http://os-fkrezme-os.skole.hr/">OŠ Franjo Krežma</el-link></el-descriptions-item>
-          <el-descriptions-item label="High school" label-align="right" align="center"><el-link
-              href="http://gimnazija-treca-os.skole.hr/">
-              III. gimnazija Osijek</el-link>
+        <el-descriptions title="Basic Info" :column="1" border>
+          <el-descriptions-item
+            label="Place of birth"
+            label-align="right"
+            align="center"
+            label-class-name="my-label"
+            class-name="my-content"
+            width="150px"
+            >Osijek</el-descriptions-item
+          >
+          <el-descriptions-item
+            label="Place of residence"
+            label-align="right"
+            align="center"
+            >Osijek</el-descriptions-item
+          >
+          <el-descriptions-item
+            label="Elementary school"
+            label-align="right"
+            align="center"
+            ><el-link href="http://os-fkrezme-os.skole.hr/"
+              >OŠ Franjo Krežma</el-link
+            ></el-descriptions-item
+          >
+          <el-descriptions-item
+            label="High school"
+            label-align="right"
+            align="center"
+            ><el-link href="http://gimnazija-treca-os.skole.hr/">
+              III. gimnazija Osijek</el-link
+            >
           </el-descriptions-item>
-          <el-descriptions-item label="College" label-align="right" align="center"><el-link
-              href="https://www.ferit.unios.hr/">FERIT Osijek</el-link></el-descriptions-item>
+          <el-descriptions-item
+            label="College"
+            label-align="right"
+            align="center"
+            ><el-link href="https://www.ferit.unios.hr/"
+              >FERIT Osijek</el-link
+            ></el-descriptions-item
+          >
         </el-descriptions>
         <div style="margin: 16px 0 0 0" class="w-100 text-center">
           <el-link @click="playStjepanAudio">
-            Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
+            Bavim li se ja ovim sportom, ili ga samo volim?</el-link
+          >
         </div>
       </el-popover>
-      <div class="divider"></div>
-      <router-link to="/marko">
-        <div class="text-center">Markov drugi izbor</div>
-      </router-link>
-      <div class="divider"></div>
     </div>
   </div>
   <div class="divider"></div>
-  <el-dialog :model-value="showDialog" @update:model-value="showDialog = $event" width="80%" center>
-    <img v-if="selectedImage" :src="selectedImage" style="width: 100%" alt="Selected image" />
+  <el-dialog
+    :model-value="showDialog"
+    @update:model-value="showDialog = $event"
+    width="80%"
+    center
+  >
+    <img
+      v-if="selectedImage"
+      :src="selectedImage"
+      style="width: 100%"
+      alt="Selected image"
+    />
   </el-dialog>
-  <el-dialog :model-value="showStjepanDialog" @update:model-value="showStjepanDialog = $event" width="80%" center>
+  <el-dialog
+    :model-value="showStjepanDialog"
+    @update:model-value="showStjepanDialog = $event"
+    width="80%"
+    center
+  >
     <p>Stjepan Milardic</p>
-    <img src="../assets/stjepan.jpg" alt="">
+    <img src="../assets/stjepan.jpg" alt="" />
   </el-dialog>
-  <el-dialog :model-value="showMarkoDialog" @update:model-value="showMarkoDialog = $event" width="80%" center>
+  <el-dialog
+    :model-value="showMarkoDialog"
+    @update:model-value="showMarkoDialog = $event"
+    width="80%"
+    center
+  >
     <p>Marko Milanovic</p>
-    <img src="../assets/marko.jpg" alt="">
+    <img src="../assets/marko.jpg" alt="" />
   </el-dialog>
 </template>
 

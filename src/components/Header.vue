@@ -11,23 +11,23 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
         <el-space size="small" class="pointer">
           <span class="white ml-2">Multimedia Technique</span>
         </el-space>
-      <div>
-        <el-dropdown trigger="click" class="pointer avatar-padding">
-          <el-avatar shape="square" :size="40">
-            <el-avatar shape="square" :size="100" :fit="fit" :src="url" />
-          </el-avatar>
-          <!-- <template #dropdown>
+        <div>
+          <el-dropdown trigger="click" class="pointer avatar-padding">
+            <el-avatar shape="square" :size="40">
+              <el-avatar shape="square" :size="100" :fit="fit" :src="url" />
+            </el-avatar>
+            <template #dropdown>
               <el-dropdown-menu>
-                <el-dropdown-item>Profile</el-dropdown-item>
-                <el-dropdown-item>Management</el-dropdown-item>
-                <el-dropdown-item> </el-dropdown-item>
-                <el-dropdown-item divided
-                    ><el-space size="small"
-                      ><el-icon><SwitchButton /></el-icon></el-space
-                    >Logout</el-dropdown-item
-                  >
-                </el-dropdown-menu>
-              </template> -->
+                <el-dropdown-item>
+                  <router-link to="/stjepan">
+                    <div class="text-center">Stjepanov drugi izbor</div>
+                  </router-link>
+                </el-dropdown-item>
+                <router-link to="/marko">
+                  <el-dropdown-item> Markov drugi izbor </el-dropdown-item>
+                </router-link>
+              </el-dropdown-menu>
+            </template>
           </el-dropdown>
         </div>
       </div>
@@ -63,4 +63,5 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
 .badge-position-fix {
   position: relative;
   top: 0.25rem;
-}</style>
+}
+</style>
