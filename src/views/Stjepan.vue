@@ -73,8 +73,10 @@ const shaqKobeSpeechOggUrl = ref(shaqKobeSpeechOggSrc);
   <p class="text-align-center">Bavim li se ja ovim sportom?</p>
   <div class="center-content">
     <audio controls>
-      <source :src="shaqKobeSpeechOggUrl" type="audio/ogg" />
-      <source src="../assets/shaq-kobe-speech.mp3" type="audio/mpeg" />
+      <source
+        :src="kosarkaStjepanSoundBavimSeKosarkomOggUrl"
+        type="audio/ogg"
+      />
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -82,8 +84,7 @@ const shaqKobeSpeechOggUrl = ref(shaqKobeSpeechOggSrc);
   <p class="text-align-center">Shaquille O'Nealov govor o Kobe Bryantu</p>
   <div class="center-content">
     <audio controls>
-      <source src="../assets/shaq-kobe-speech.ogg" type="audio/ogg" />
-      <source src="../assets/shaq-kobe-speech.mp3" type="audio/mpeg" />
+      <source :src="shaqKobeSpeechOggUrl" type="audio/ogg" />
       Your browser does not support the audio element.
     </audio>
   </div>
