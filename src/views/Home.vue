@@ -148,6 +148,7 @@ const video3Url = ref(video3Src);
             🔉 Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
+      <router-link to="/stjepan" class="center-content">Stjepanov drugi izbor</router-link>
     </div>
 
     <div class="flex flex-col">
@@ -178,9 +179,10 @@ const video3Url = ref(video3Src);
             🔉 Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
+      <router-link to="/marko" class="center-content">Markov drugi izbor</router-link>
     </div>
   </div>
-  <div class="divider"></div>
+
   <el-dialog :model-value="showDialog" @update:model-value="showDialog = $event" width="80%" center>
     <img v-if="selectedImage" :src="selectedImage" style="width: 100%" alt="Selected image" />
   </el-dialog>
