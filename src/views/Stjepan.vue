@@ -42,7 +42,7 @@ let basketballDoncicImgSrc;
 let kosarka1GifSrc;
 let kosarkaSlika1JpegSrc;
 Object.keys(imgModules).forEach((key) => {
-    if (key.includes("basketball-doncic.png")) {
+    if (key.includes("basketballdoncic.png")) {
         basketballDoncicImgSrc = imgModules[key].default;
     }
     if (key.includes("kosarka1.gif")) {
