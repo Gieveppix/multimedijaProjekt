@@ -9,9 +9,7 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
     <div class="wrapper">
       <div class="flex justify-between align-center">
         <el-space size="small" class="pointer">
-          <router-link style="text-decoration: none" to="/" class="white ml-2"
-            >Multimedia Technique</router-link
-          >
+          <router-link style="text-decoration: none" to="/" class="white ml-2">Multimedia Technique</router-link>
         </el-space>
         <div>
           <el-dropdown trigger="click" class="pointer avatar-padding">
@@ -20,7 +18,10 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
             </el-avatar>
             <template #dropdown>
               <el-dropdown-menu>
-                <router-link to="/stjepan">
+                <router-link to="/stjepan_prvi">
+                  <el-dropdown-item> Stjepanov prvi izbor </el-dropdown-item>
+                </router-link>
+                <router-link to="/stjepan_drugi">
                   <el-dropdown-item> Stjepanov drugi izbor </el-dropdown-item>
                 </router-link>
                 <router-link to="/marko">
