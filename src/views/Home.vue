@@ -79,6 +79,8 @@ Object.keys(videoModules).forEach((key) => {
 const wrVideoUrl = ref(wrVideoSrc);
 const video1Url = ref(video1Src);
 const video3Url = ref(video3Src);
+
+
 </script>
 
 <template>
@@ -148,7 +150,8 @@ const video3Url = ref(video3Src);
             🔉 Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
-      <router-link to="/stjepan" class="center-content">Stjepanov drugi izbor</router-link>
+      <router-link to="/stjepan_prvi" class="center-content">Stjepanov prvi izbor - Kosarka</router-link>
+      <router-link to="/stjepan_drugi" class="center-content">Stjepanov drugi izbor - Biciklizam</router-link>
     </div>
 
     <div class="flex flex-col">
