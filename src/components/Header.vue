@@ -24,6 +24,9 @@ const url = "https://cdn-icons-png.flaticon.com/512/2972/2972134.png";
                 <router-link to="/stjepan_drugi">
                   <el-dropdown-item> Stjepanov drugi izbor </el-dropdown-item>
                 </router-link>
+                <router-link to="/marko_drugi">
+                  <el-dropdown-item> Markov prvi izbor </el-dropdown-item>
+                </router-link>
                 <router-link to="/marko">
                   <el-dropdown-item> Markov drugi izbor </el-dropdown-item>
                 </router-link>
