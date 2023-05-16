@@ -182,6 +182,7 @@ const video3Url = ref(video3Src);
             🔉 Bavim li se ja ovim sportom, ili ga samo volim?</el-link>
         </div>
       </el-popover>
+      <router-link to="/marko_drugi" class="center-content">Markov prvi izbor</router-link>
       <router-link to="/marko" class="center-content">Markov drugi izbor</router-link>
     </div>
   </div>
